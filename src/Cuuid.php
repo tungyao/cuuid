@@ -15,23 +15,21 @@ class Cuuid {
      * @param int $port
      * @return Cuuid
      */
-    public static function Create($address = '127.0.0.1', $port = 8082) {
-        $c = new Cuuid();
+    public function __construct($address = '127.0.0.1', $port = 8082) {
         $conn = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
         socket_connect($conn, $address, $port);
         if ($conn) {
-            $c->code = socket_read($conn, 32);
+            $this->code = socket_read($conn, 32);
         }
-        $c->conn = $conn;
-        return $c;
+        $this->conn = $conn;
     }
 
     /**
      * @return string
      */
     public function get(): string {
-        socket_write($this->conn, 'get');
-        $c->code = socket_read($this->conn, 32);
+        socket_write($this->conn, "get", 3);
+        $this->code = socket_read($this->conn, 32);
         return $this->code;
     }
 
