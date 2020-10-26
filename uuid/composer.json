@@ -1,0 +1,22 @@
+{
+    "name": "tungyao/uuid",
+    "description": "create uuid",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "tungyao",
+            "email": "tungyao@cosox.org",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2 || ^8.0"
+    },
+    "autoload": {
+        "classmap": [
+            "src"
+        ]
+    },
+    'version': "0.5.0"
+}
+

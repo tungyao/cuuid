@@ -1,6 +1,6 @@
 <?php
 
-namespace Tungyao\Ext;
+namespace Tungyao\Uuid;
 
 /**
  * Class Cuuid
