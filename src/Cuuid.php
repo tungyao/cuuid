@@ -33,6 +33,13 @@ class Cuuid {
         return $this->code;
     }
 
+    // 会唯一的短链接
+    public function link(): string {
+        socket_write($this->conn, "lnk", 3);
+        $this->code = socket_read($this->conn, 32);
+        return $this->code;
+    }
+
     /**
      *
      */
